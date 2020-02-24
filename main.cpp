@@ -34,64 +34,6 @@ void mkp(Person person)
 	working_list.push_back(person);
 }
 
-void insertData()
-{
-	//name,hostel,class,gender,place,repeater,house,religion
-//PARSER-FLAG
-    mkp(Person("Deon Joshy","Aneeta",false,true,"Ernakulam",false,'T',"christian"));
-    mkp(Person("Tom Vempala","Aneeta",false,true,"Kottayam",false,'T',"christian"));
-    mkp(Person("Karthika R","Vimala",false,false,"Kottayam",false,'R',"hindu"));
-    mkp(Person("Poorab Shenoy","MH",false,true,"Kannur",false,'A',"hindu"));
-    mkp(Person("Sahil Sait","Backer",false,true,"Kannur",false,'S',"muslim"));
-    mkp(Person("Royce Elson","RR",false,true,"Ernakulam",false,'R',"christian"));
-    mkp(Person("Sharat Jacob Jacob","Aneeta",true,true,"Kottayam",false,'S',"christian"));
-    mkp(Person("Gayathry ","Nava Jyoti",false,false,"Ernakulam",false,'D',"hindu"));
-    mkp(Person("Roy Jose","RR",false,true,"Ernakulam",false,'D',"christian"));
-    mkp(Person("Navaneeth S Nair","MH",true,true,"Palakad",false,'T',"hindu"));
-    mkp(Person("Vineeth M Vinoy","Aneeta",false,true,"Ernakulam",false,'R',"christian"));
-    mkp(Person("Anand V","RR",false,true,"Ernakulam",false,'T',"hindu"));
-    mkp(Person("Shimil Abraham","Better Homes",false,true,"Kozhikode",false,'R',"christian"));
-    mkp(Person("Syyed Anwar","Some other PG",true,true,"Pathanamthitaa",false,'R',"muslim"));
-    mkp(Person("Nayana Vinod","Udaya",true,false,"Kottayam",false,'D',"hindu"));
-    mkp(Person("Tony Augustine","Some other PG",true,true,"Ernakulam",true,'S',"christian"));
-    mkp(Person("Gokulnath M Prabhu","Some other PG",true,true,"Alapuzha",false,'R',"hindu"));
-    mkp(Person("Aleena Baby","YMCA",true,false,"Idukki",true,'D',"christian"));
-    mkp(Person("Sidharth S","Some other PG",false,true,"Idukki",true,'S',"hindu"));
-    mkp(Person("Tiss Joseph","YMCA",true,false,"Kottayam",false,'D',"christian"));
-    mkp(Person("Anjali Rajendran ","Udaya",false,false,"Kannur",false,'D',"hindu"));
-    mkp(Person("Shweta Jayan","YMCA",false,false,"Thiruvananthapuram",true,'T',"hindu"));
-    mkp(Person("Arun Sojan","'Hosteller' wouldn't really be accurate",true,true,"Kottayam",false,'S',"christian"));
-    mkp(Person("Anjali Parapattu","YMCA",true,false,"Ernakulam",false,'A',"christian"));
-    mkp(Person("Bharath Raj R","Shamla",false,true,"Kollam",false,'S',"hindu"));
-    mkp(Person("Denin Paul","Aneeta",true,true,"Thrissur",false,'T',"christian"));
-    mkp(Person("George Sabu","Aneeta",true,true,"Kottayam",false,'T',"christian"));
-    mkp(Person("Abiram P","Some other PG",true,true,"Kozhikode",false,'A',"hindu"));
-    mkp(Person("Joel Joshua","MH",false,true,"Kasargode",false,'A',"christian"));
-    mkp(Person("Neeraj Hari","Some other PG",false,true,"Alapuzha",false,'T',"hindu"));
-    mkp(Person("Akhil Prem","Some other PG",true,true,"Kannur",true,'D',"hindu"));
-    mkp(Person("Jomey J James","MH",true,true,"Thiruvananthapuram",false,'A',"christian"));
-    mkp(Person("Gopika G","Vimala",true,false,"Kottayam",false,'R',"hindu"));
-    mkp(Person("Ashish Mathew Philip","MH",true,true,"Thiruvananthapuram",false,'A',"christian"));
-    mkp(Person("Sebin Davis","MH",true,true,"Ernakulam",false,'A',"christian"));
-    mkp(Person("Abraham Jacob","MH",false,true,"Kannur",false,'A',"christian"));
-    mkp(Person("Deepak Sembakam","Aneeta",false,true,"kottayam",true,'R',"christian"));
-    mkp(Person("Balu U R","MH",true,true,"Malapuram",true,'A',"hindu"));
-    mkp(Person("Vikas P Nambiar","MH",true,true,"Kannur",true,'A',"hindu"));
-    mkp(Person("Nikita Menon","Udaya",true,false,"Thrissur",false,'S',"hindu"));
-    mkp(Person("Ansaf Muhammed","MH",true,true,"Kannur",true,'A',"muslim"));
-    mkp(Person("Jerin Tom","RR",false,true,"Kottayam",false,'T',"christian"));
-    mkp(Person("Anjana Sudevan","YMCA",false,false,"Kozhikode",false,'S',"hindu"));
-    mkp(Person("Nihitha  S","Nava Jyoti",false,false,"Idukki",false,'T',"hindu"));
-    mkp(Person("Meghana O P","Nava Jyoti",true,false,"Ernakulam",false,'T',"hindu"));
-    mkp(Person("Jagath Jijo","Sky Blue",true,true,"Kottayam",false,'T',"hindu"));
-    mkp(Person("Faheem P P ","Shamla",false,true,"Malapuram",false,'D',"muslim"));
-    mkp(Person("Ashwin Girish","MH",false,true,"Pathanamthitaa",false,'A',"hindu"));
-    mkp(Person("Sreeram","MH",false,true,"Kozhikode",false,'A',"hindu"));
-    mkp(Person("Nithin Antony","Aneeta",true,true,"Alapuzha",false,'T',"christian"));
-    mkp(Person("Govind Gayathri","Aneeta",false,true,"Thiruvananthapuram",true,'A',"hindu"));
-    mkp(Person("Alen J Ninan","RR",true,true,"Malapuram",false,'S',"christian"));
-    }
-
 
 char getMaxHouse()
 {
@@ -272,8 +214,8 @@ void doHouse(char house)
 			break;
 	}
 }
-	
 
+void insertData();
 
 int main()
 {
@@ -309,10 +251,6 @@ int main()
 	    }
 
 
-//Test
-	for(auto iterator = working_list.begin();iterator != working_list.end();iterator++)
-		cout<<endl<<iterator->_name<<endl;
-
             cout<<endl<<"Is this a dude?"<<endl;
 	    cin>>choice;
 	    if(choice == 'y')
@@ -343,10 +281,71 @@ int main()
 	    
 	cout<<endl<<"Is He from the house ";
 	doHouse(getMaxHouse());
+	for(auto iterator : working_list)
+		cout<<iterator._name<<endl;
 	    
 cin>>choice;	
 
     }
 
     return 0;
+}
+
+void insertData()
+{
+	//name,hostel,class,gender,place,repeater,house,religion
+
+    mkp(Person("Deon Joshy","Aneeta",false,true,"Ernakulam",false,'T',"christian"));
+    mkp(Person("Tom Vempala","Aneeta",false,true,"Kottayam",false,'T',"christian"));
+    mkp(Person("Karthika R","Vimala",false,false,"Kottayam",false,'R',"hindu"));
+    mkp(Person("Poorab Shenoy","MH",false,true,"Kannur",false,'A',"hindu"));
+    mkp(Person("Sahil Sait","Backer",false,true,"Kannur",false,'S',"muslim"));
+    mkp(Person("Royce Elson","RR",false,true,"Ernakulam",false,'R',"christian"));
+    mkp(Person("Sharat Jacob Jacob","Aneeta",true,true,"Kottayam",false,'S',"christian"));
+    mkp(Person("Gayathry ","Nava Jyoti",false,false,"Ernakulam",false,'D',"hindu"));
+    mkp(Person("Roy Jose","RR",false,true,"Ernakulam",false,'D',"christian"));
+    mkp(Person("Navaneeth S Nair","MH",true,true,"Palakad",false,'T',"hindu"));
+    mkp(Person("Vineeth M Vinoy","Aneeta",false,true,"Ernakulam",false,'R',"christian"));
+    mkp(Person("Anand V","RR",false,true,"Ernakulam",false,'T',"hindu"));
+    mkp(Person("Shimil Abraham","Better Homes",false,true,"Kozhikode",false,'R',"christian"));
+    mkp(Person("Syyed Anwar","Some other PG",true,true,"Pathanamthitaa",false,'R',"muslim"));
+    mkp(Person("Nayana Vinod","Udaya",true,false,"Kottayam",false,'D',"hindu"));
+    mkp(Person("Tony Augustine","Some other PG",true,true,"Ernakulam",true,'S',"christian"));
+    mkp(Person("Gokulnath M Prabhu","Some other PG",true,true,"Alapuzha",false,'R',"hindu"));
+    mkp(Person("Aleena Baby","YMCA",true,false,"Idukki",true,'D',"christian"));
+    mkp(Person("Sidharth S","Some other PG",false,true,"Idukki",true,'S',"hindu"));
+    mkp(Person("Tiss Joseph","YMCA",true,false,"Kottayam",false,'D',"christian"));
+    mkp(Person("Anjali Rajendran ","Udaya",false,false,"Kannur",false,'D',"hindu"));
+    mkp(Person("Shweta Jayan","YMCA",false,false,"Thiruvananthapuram",true,'T',"hindu"));
+    mkp(Person("Arun Sojan","'Hosteller' wouldn't really be accurate",true,true,"Kottayam",false,'S',"christian"));
+    mkp(Person("Anjali Parapattu","YMCA",true,false,"Ernakulam",false,'A',"christian"));
+    mkp(Person("Bharath Raj R","Shamla",false,true,"Kollam",false,'S',"hindu"));
+    mkp(Person("Denin Paul","Aneeta",true,true,"Thrissur",false,'T',"christian"));
+    mkp(Person("George Sabu","Aneeta",true,true,"Kottayam",false,'T',"christian"));
+    mkp(Person("Abiram P","Some other PG",true,true,"Kozhikode",false,'A',"hindu"));
+    mkp(Person("Joel Joshua","MH",false,true,"Kasargode",false,'A',"christian"));
+    mkp(Person("Neeraj Hari","Some other PG",false,true,"Alapuzha",false,'T',"hindu"));
+    mkp(Person("Akhil Prem","Some other PG",true,true,"Kannur",true,'D',"hindu"));
+    mkp(Person("Jomey J James","MH",true,true,"Thiruvananthapuram",false,'A',"christian"));
+    mkp(Person("Gopika G","Vimala",true,false,"Kottayam",false,'R',"hindu"));
+    mkp(Person("Ashish Mathew Philip","MH",true,true,"Thiruvananthapuram",false,'A',"christian"));
+    mkp(Person("Sebin Davis","MH",true,true,"Ernakulam",false,'A',"christian"));
+    mkp(Person("Abraham Jacob","MH",false,true,"Kannur",false,'A',"christian"));
+    mkp(Person("Deepak Sembakam","Aneeta",false,true,"kottayam",true,'R',"christian"));
+    mkp(Person("Balu U R","MH",true,true,"Malapuram",true,'A',"hindu"));
+    mkp(Person("Vikas P Nambiar","MH",true,true,"Kannur",true,'A',"hindu"));
+    mkp(Person("Nikita Menon","Udaya",true,false,"Thrissur",false,'S',"hindu"));
+    mkp(Person("Ansaf Muhammed","MH",true,true,"Kannur",true,'A',"muslim"));
+    mkp(Person("Jerin Tom","RR",false,true,"Kottayam",false,'T',"christian"));
+    mkp(Person("Anjana Sudevan","YMCA",false,false,"Kozhikode",false,'S',"hindu"));
+    mkp(Person("Nihitha  S","Nava Jyoti",false,false,"Idukki",false,'T',"hindu"));
+    mkp(Person("Meghana O P","Nava Jyoti",true,false,"Ernakulam",false,'T',"hindu"));
+    mkp(Person("Jagath Jijo","Sky Blue",true,true,"Kottayam",false,'T',"hindu"));
+    mkp(Person("Faheem P P ","Shamla",false,true,"Malapuram",false,'D',"muslim"));
+    mkp(Person("Ashwin Girish","MH",false,true,"Pathanamthitaa",false,'A',"hindu"));
+    mkp(Person("Sreeram","MH",false,true,"Kozhikode",false,'A',"hindu"));
+    mkp(Person("Nithin Antony","Aneeta",true,true,"Alapuzha",false,'T',"christian"));
+    mkp(Person("Govind Gayathri","Aneeta",false,true,"Thiruvananthapuram",true,'A',"hindu"));
+    mkp(Person("Alen J Ninan","RR",true,true,"Malapuram",false,'S',"christian"));
+//PARSER-FLAG
 }

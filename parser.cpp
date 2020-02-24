@@ -15,7 +15,7 @@ int main()
 		flag = true;
 		file.seekp(file.tellg());
 		file.seekp(-14,std::ios::cur);
-	        file<<"helloworld\n//PARSER-FLAG\n}";
+	        file<<"//test\n//PARSER-FLAG\n}";
 		system("g++ mn.cpp");
 		break;
 	}
