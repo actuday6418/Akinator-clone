@@ -3,10 +3,6 @@
 #include<vector>
 #include<algorithm>
 
-//mkp is for adding new adding people to the working list
-//rmp for removing them
-//count gives the number of entries in the list currently
-
 using namespace std;
 
 struct Person
@@ -34,6 +30,65 @@ void mkp(Person person)
 	working_list.push_back(person);
 }
 
+//Function to get the place with the largest number of people
+string getMaxPlace()
+{
+	struct place_item
+	{
+		int count;
+		string place;
+	};
+
+	vector<place_item> places;
+	place_item flag;
+	for(auto x : working_list)
+			{
+				if([&places,&flag]() -> vector<place_item>::iterator
+						{
+				for(auto place: places)
+					if(place.compare(x->place)==0)	
+					{
+						flag = *place;	break;
+					}
+				return flag;
+			} !=NULL)
+			flag.count++;			
+			}
+	sort(places.begin(),places.end(),[](const place_item a,const place_item b)
+			{
+				return a.count > b.count;
+			}
+	return places::front().place;
+}
+
+void doPlace(string place)
+{
+	char choice;
+	cout<<place<<"?(y/n)";
+	cin>>choice;
+	if(choice == 'y')
+	{
+		    auto iterator = working_list.begin();
+            while(iterator!=working_list.end())
+                                {
+                                        if(compare(iterator->_place,place))
+                                                working_list.erase(iterator);
+                                        else
+                                                ++iterator;
+                                }
+	}	
+	else
+	{
+		    auto iterator = working_list.begin();
+            while(iterator!=working_list.end())
+                                {
+                                        if(compare(iterator->_place,place)==0)
+                                                working_list.erase(iterator);
+                                        else
+                                                ++iterator;
+                                }
+	}
+}
 
 char getMaxHouse()
 {
@@ -278,11 +333,17 @@ int main()
 
 	    }
 
-	    
-	cout<<endl<<"Is He from the house ";
+
+
+	cout<<endl<<"Is he/she from the house ";
 	doHouse(getMaxHouse());
 	for(auto iterator : working_list)
 		cout<<iterator._name<<endl;
+
+	cout<<endl<<"Is he/she from ";
+     	doPlace(getMaxPlace());
+
+
 	    
 cin>>choice;	
 
