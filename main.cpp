@@ -40,38 +40,41 @@ string getMaxPlace()
 	};
 
 	vector<place_item> places;
-	place_item flag;
+	place_item* flag;
 	for(auto x : working_list)
 			{
-				if([&places,&flag]() -> vector<place_item>::iterator
-						{
-				for(auto place: places)
-					if(place.compare(x->place)==0)	
-					{
-						flag = *place;	break;
-					}
-				return flag;
-			} !=NULL)
-			flag.count++;			
+				flag = NULL;
+				for(auto place : places)
+				if(place.place.compare(x._place)==0)	
+				{	
+					flag = &place;	break;
+				}
+
+				if(flag != NULL)
+					flag->count++;			
+				else
+				{
+					place_item a = {x._place,0};
+					places.pushback(a);
 			}
 	sort(places.begin(),places.end(),[](const place_item a,const place_item b)
 			{
 				return a.count > b.count;
-			}
-	return places::front().place;
+			});
+	return places.front().place;
 }
 
 void doPlace(string place)
 {
 	char choice;
-	cout<<place<<"?(y/n)";
+	cout<<place<<"?(y/n)"<<endl;
 	cin>>choice;
 	if(choice == 'y')
 	{
 		    auto iterator = working_list.begin();
             while(iterator!=working_list.end())
                                 {
-                                        if(compare(iterator->_place,place))
+                                        if(place.compare(iterator->_place))
                                                 working_list.erase(iterator);
                                         else
                                                 ++iterator;
@@ -82,7 +85,7 @@ void doPlace(string place)
 		    auto iterator = working_list.begin();
             while(iterator!=working_list.end())
                                 {
-                                        if(compare(iterator->_place,place)==0)
+                                        if(place.compare(iterator->_place)==0)
                                                 working_list.erase(iterator);
                                         else
                                                 ++iterator;
@@ -339,8 +342,7 @@ int main()
 	doHouse(getMaxHouse());
 	for(auto iterator : working_list)
 		cout<<iterator._name<<endl;
-
-	cout<<endl<<"Is he/she from ";
+	cout<<endl<<"Is he/she from "<<endl;
      	doPlace(getMaxPlace());
 
 
