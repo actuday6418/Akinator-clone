@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 #include<fstream>
 #include<sstream>
 
@@ -35,29 +36,29 @@ int main()
 	char house;
 	while(choice == 'y')
 	{
-		std::cout<<"$:Enter the name: ";
-		std::cin>>name;
-		std::cout<<"$:Enter the place: ";
-		std::cin>>place;
-		std::cout<<"$:Enter the religion: ";
-		std::cin>>religion;
-		std::cout<<"$:Enter the hostel: ";
-		std::cin>>hostel;
-		std::cout<<"$:Enter the first character of the house: ";
+		std::cout<<"$:Enter the name: "<<std::endl;
+		std::getline(std::cin,name);
+		std::cout<<"$:Enter the place: "<<std::endl;
+		std::getline(std::cin,place);
+		std::cout<<"$:Enter the religion: "<<std::endl;
+		std::getline(std::cin,religion);
+		std::cout<<"$:Enter the hostel: "<<std::endl;
+		std::getline(std::cin,hostel);
+		std::cout<<"$:Enter the first character of the house: "<<std::endl;
 		std::cin>>house;
-		std::cout<<"$:Is this person male?(y/n):";
-		std::cin.ignore();
-		if(std::cin.get() == 'y')
+		std::cout<<"$:Is this person male?(y/n):"<<std::endl;
+		std::cin>>choice;
+		if(choice == 'y')
 			gender = true;
 		else gender = false;
-		std::cout<<"$:Is this person a repeater?(y/n):";
-		std::cin.ignore();
-		if(std::cin.get() == 'y')
+		std::cout<<"$:Is this person a repeater?(y/n):"<<std::endl;
+		std::cin>>choice;
+		if(choice == 'y')
 			repeater = true;
 		else repeater = false;
-		std::cout<<"$:Is this person in CSB?(y/n):";
-		std::cin.ignore();
-		if(std::cin.get() == 'y')
+		std::cout<<"$:Is this person in CSB?(y/n):"<<std::endl;
+		std::cin>>choice;
+		if(choice == 'y')
 			_class = true;
 		else _class = false;
 		std::stringstream strStream;
@@ -77,9 +78,9 @@ int main()
 		std::string line = strStream.str();
 		write(line);
 
-		std::cout<<"$:Do you want to continue?(y/n): ";
+		std::cout<<"$:Do you want to continue?(y/n): "<<std::endl;
 		std::cin>>choice;
 	}
-	//system("g++ main.cpp");
+	system("g++ main.cpp -o App");
 	std::cout<<std::endl;
 }

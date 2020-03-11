@@ -31,6 +31,134 @@ void mkp(Person person)
 }
 
 //Function to get the place with the largest number of people
+string getMaxHostel()
+{
+	struct hostel_item
+	{
+		int count;
+		string hostel;
+	};
+
+	vector<hostel_item> hostels;
+	hostel_item* flag;
+	for(auto x : working_list)
+			{
+				flag = NULL;
+				for(auto hostel : hostels)
+				if(hostel.hostel.compare(x._hostel)==0)	
+				{	
+					flag = &hostel;	break;
+				}
+
+				if(flag != NULL)
+					flag->count++;			
+				else
+				{
+					hostel_item a = {0,x._hostel};
+					hostels.push_back(a);
+				}
+			}
+	sort(hostels.begin(),hostels.end(),[](const hostel_item a,const hostel_item b)
+			{
+				return a.count > b.count;
+			});
+	return hostels.front().hostel;
+}
+
+void doHostel(string hostel)
+{
+	char choice;
+	cout<<hostel<<"?(y/n)"<<endl;
+	cin>>choice;
+	if(choice == 'y')
+	{
+		    auto iterator = working_list.begin();
+            while(iterator!=working_list.end())
+                                {
+                                        if(hostel.compare(iterator->_hostel))
+                                                working_list.erase(iterator);
+                                        else
+                                                ++iterator;
+                                }
+	}	
+	else
+	{
+		    auto iterator = working_list.begin();
+            while(iterator!=working_list.end())
+                                {
+                                        if(hostel.compare(iterator->_hostel)==0)
+                                                working_list.erase(iterator);
+                                        else
+                                                ++iterator;
+                                }
+	}
+}
+
+//Function to get the religion with the largest number of people
+string getMaxReligion()
+{
+	struct religion_item
+	{
+		int count;
+		string religion;
+	};
+
+	vector<religion_item> religions;
+	religion_item* flag;
+	for(auto x : working_list)
+			{
+				flag = NULL;
+				for(auto religion : religions)
+				if(religion.religion.compare(x._religion)==0)	
+				{	
+					flag = &religion;	break;
+				}
+
+				if(flag != NULL)
+					flag->count++;			
+				else
+				{
+					religion_item a = {0,x._religion};
+					religions.push_back(a);
+				}
+			}
+	sort(religions.begin(),religions.end(),[](const religion_item a,const religion_item b)
+			{
+				return a.count > b.count;
+			});
+	return religions.front().religion;
+}
+
+void doReligion(string religion)
+{
+	char choice;
+	cout<<religion<<"?(y/n)"<<endl;
+	cin>>choice;
+	if(choice == 'y')
+	{
+		    auto iterator = working_list.begin();
+            while(iterator!=working_list.end())
+                                {
+                                        if(religion.compare(iterator->_religion))
+                                                working_list.erase(iterator);
+                                        else
+                                                ++iterator;
+                                }
+	}	
+	else
+	{
+		    auto iterator = working_list.begin();
+            while(iterator!=working_list.end())
+                                {
+                                        if(religion.compare(iterator->_religion)==0)
+                                                working_list.erase(iterator);
+                                        else
+                                                ++iterator;
+                                }
+	}
+}
+
+//Function to get the place with the largest number of people
 string getMaxPlace()
 {
 	struct place_item
@@ -54,8 +182,9 @@ string getMaxPlace()
 					flag->count++;			
 				else
 				{
-					place_item a = {x._place,0};
-					places.pushback(a);
+					place_item a = {0,x._place};
+					places.push_back(a);
+				}
 			}
 	sort(places.begin(),places.end(),[](const place_item a,const place_item b)
 			{
@@ -340,11 +469,18 @@ int main()
 
 	cout<<endl<<"Is he/she from the house ";
 	doHouse(getMaxHouse());
-	for(auto iterator : working_list)
-		cout<<iterator._name<<endl;
+
 	cout<<endl<<"Is he/she from "<<endl;
      	doPlace(getMaxPlace());
 
+	cout<<endl<<"Is he/she "<<endl;
+	doReligion(getMaxReligion());
+
+	cout<<"Is he/she from the hostel"<<endl;
+	doHostel(getMaxHostel());
+
+	for(auto iterator : working_list)
+		cout<<iterator._name<<endl;
 
 	    
 cin>>choice;	
@@ -410,5 +546,6 @@ void insertData()
     mkp(Person("Nithin Antony","Aneeta",true,true,"Alapuzha",false,'T',"christian"));
     mkp(Person("Govind Gayathri","Aneeta",false,true,"Thiruvananthapuram",true,'A',"hindu"));
     mkp(Person("Alen J Ninan","RR",true,true,"Malapuram",false,'S',"christian"));
+    mkp(Person("Kripa Anna Sojan","nada",true,true,"Kottayam",false,'S',"christian"));
 //PARSER-FLAG!-DO-NOT-EDIT-THIS-PART-OF-THE-CODE
 }
